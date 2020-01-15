@@ -67,8 +67,6 @@ namespace KolokwiumPoprawa
         public double AktualnaCena
         {
             get { return _aktualnaCena = CenaStandardowa * ((100 - Obnizka) / 100); ; }
-            set { _aktualnaCena = CenaStandardowa * ((100 - Obnizka) / 100); }
-
         }
     }
 }

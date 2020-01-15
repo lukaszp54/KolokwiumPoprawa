@@ -124,9 +124,34 @@ namespace KolokwiumPoprawa
 
         }
 
+
         public static void Zadanie4(int [][] tab)
         {
+            Random los = new Random();
+            for (int i = 0; i < tab.Length; i++)
+            {
+                for (int j = 0; j < tab[i].Length; j++)
+                {
+                    tab[i][j] = los.Next(1, 30);
+                    Console.Write($"{tab[i][j]} ");
+                }
+                Console.WriteLine();
+            }
 
+            int min = int.MaxValue;
+            for (int i = 0; i < tab.Length; i++)
+            {
+                for (int j = 0; j < tab[i].Length; j++)
+                {
+                    if (tab[i][j] < min)
+                    {
+                        min = tab[i][j];
+                    }
+
+                }
+
+            }
+            Console.WriteLine("Najmniejszy element jest równy: {0}", min);
         }
 
 
@@ -148,11 +173,17 @@ namespace KolokwiumPoprawa
 
             Console.WriteLine("Czwarte zadanie: ");
             int[,] tab = new int[4, 5];
+            int[][] tab2 = new int[6][];
+            for (int i = 0; i < tab2.Length; i++)
+            {
+                tab2[i] = new int[7];
+            }
             Zadanie4(tab);
+            Zadanie4(tab2);
             Console.WriteLine();
 
             Console.Write("Piate zadanie: ");
-            EBook ksiazka = new EBook("Mickiewicz", "Pan Tadeusz", new DateTime(1834, 06, 28), new DateTime(2020, 1, 1), -3, -3);
+            EBook ksiazka = new EBook("Mickiewicz", "Pan Tadeusz", new DateTime(1834, 06, 28), new DateTime(2020, 1, 1), 5, 3);
             Console.WriteLine($"Cena aktualna: {ksiazka.AktualnaCena}");  
         }
     }
